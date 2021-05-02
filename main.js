@@ -1,11 +1,18 @@
+
+EnglishNum = "";  //String to compile output
+//Reading inputs
 var myArgs = process.argv.slice(2);
-numbertoEnglish(myArgs);
+numbertoEnglish(myArgs); //calling function
+
+
+//function should convert an array of integers into an array of strings representing the phonetic equivalent of the
+// integer.
 
 function numbertoEnglish(list){
-    EnglishNum = "";
-    for(i =0; i < list.length; i++){
+
+    for(i =0; i < list.length; i++){   //looping through list of elements
         numtoString = list[i].toString();
-        for(j =0; j < numtoString.length; j++){
+        for(j =0; j < numtoString.length; j++){   //reading each character and coverting to phonetic equivalent
             if (numtoString[j].toString() == '0'){
                 EnglishNum += 'Zero';
             }
@@ -37,9 +44,9 @@ function numbertoEnglish(list){
                 EnglishNum += 'Nine';
             }
         }
-    if (i != list.length-1){
+    if (i != list.length-1){ //adding comma (if nessessary)
         EnglishNum += ",";
     }
     }
-    console.log(EnglishNum);
+    console.log(EnglishNum); //printing to stdout
 };
