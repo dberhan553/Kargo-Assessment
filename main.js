@@ -1,11 +1,12 @@
-var myArgs = process.argv.slice(2);
-numbertoEnglish(myArgs);
+var myArgs = process.argv.slice(2); //reading inputs
+numbertoEnglish(myArgs); //calling function with inputs
 
 function numbertoEnglish(list){
     EnglishNum = "";
-    for(i =0; i < list.length; i++){
+    for(i =0; i < list.length; i++){ //looping through each number
         numtoString = list[i].toString();
-        for(j =0; j < numtoString.length; j++){
+        for(j =0; j < numtoString.length; j++){  //looping through each digit in the number
+            // Find the phonetic corresponding to each digit
             if (numtoString[j].toString() == '0'){
                 EnglishNum += 'Zero';
             }
@@ -37,9 +38,11 @@ function numbertoEnglish(list){
                 EnglishNum += 'Nine';
             }
         }
+        //add comma if necessary
     if (i != list.length-1){
         EnglishNum += ",";
     }
     }
+    //print output
     console.log(EnglishNum);
 };
